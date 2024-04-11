@@ -1,6 +1,8 @@
 <template>
   <h3>{{ info }}</h3>
   <p>{{ someInfo }}</p>
+
+
 </template>
 
 <script>
