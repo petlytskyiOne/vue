@@ -5,7 +5,9 @@
   <p className="error">{{ error }}</p>
   <button @click="sendData()">send</button>
 
-  <p>{{ users }}</p>
+  <div v-for="(el, index) in users" :key="index">
+
+  </div>
 </template>
 
 <script>
