@@ -1,6 +1,6 @@
 # vue
 
-See [YouTube](https://youtu.be/cbHdtToeI6A?t=867).
+See [YouTube](https://youtu.be/gc4mdM1CcNo?t=15).
 
 This template should help get you started developing with Vue 3 in Vite.
 

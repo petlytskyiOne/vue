@@ -5,13 +5,35 @@
   <p className="error">{{ error }}</p>
   <button @click="sendData()">send</button>
 
-  <div v-for="(el, index) in users" :key="index">
-
+  <div v-if="users.length == 0" className="user">
+    We don't have any users!
   </div>
+
+  <div v-else-if="users.length == 1" className="user">
+    Users has One element!
+  </div>
+
+  <div v-else className="user">
+    Array has more than one element!
+  </div>
+
+  <User v-for="(el, index) in users" :key="index" :user="el" :index="index" :deleteUser="deleteUser" />
+  <!-- event processing for the entire object without a button -->
+  <!-- @click="deleteUser(index)" -->
+
+  <!-- transferred to components as an object -->
+  <!-- <div v-for="(el, index) in users" :key="index" className="user">
+    <h3>{{ el.name }}</h3>
+    <p>{{ el.email }} - <b>{{ el.pass }}</b></p>
+  </div> -->
 </template>
 
 <script>
+
+import User from './components/User.vue';
+
 export default {
+  components: { User },
   data() {
     return {
       users: [],
@@ -41,6 +63,9 @@ export default {
         pass: this.userPass,
         email: this.userEmail
       })
+    },
+    deleteUser(index) {
+      this.users.splice(index, 1);
     }
   }
 }
